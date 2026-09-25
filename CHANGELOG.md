@@ -35,6 +35,11 @@ and this project adheres to [Semantic Versioning][].
   data (including loading genotypes via `read_sgkit_zarr`/`stream_pgen_to_zarr`), how donor
   syncing works, selecting subsets, aggregating, and saving/loading. No analysis, just the
   data structure itself
+- New scEPS tutorial: end-to-end walkthrough of the four [scEPS](https://github.com/Genentech/sceps)
+  command-line steps (per-neighborhood statistics, approximately independent neighborhood
+  blocks, cell-type aggregation, correlation with gene expression) on the dummy OneK1K
+  dataset, including what the prerequisite MAGMA and preprocessing steps must produce and
+  how to parallelize a real run
 - `tl.external.build_known_cis_eqtls_from_tensorqtl`: build a known-cis-eQTL annotation
   (variant x gene, binary) from a completed TensorQTL nominal cis-scan, for use as a
   fine-mapping prior
@@ -90,7 +95,7 @@ and this project adheres to [Semantic Versioning][].
 - A stray unanchored `data` entry in `.gitignore` silently hid any new file added
   under `tests/data/` or `docs/tutorials/data/`; scoped it to the latter only
 - `io.to_plink` crashed (`TypeError: NDFrame.to_csv() got an unexpected keyword
-  argument 'line_terminator'`) with `pandas-plink` 2.2.9 on a modern pandas, which
+argument 'line_terminator'`) with `pandas-plink` 2.2.9 on a modern pandas, which
   renamed/removed that `to_csv` kwarg; bumped the minimum `pandas-plink` version to
   2.3.0, which uses the current `lineterminator` kwarg internally
 
