@@ -37,9 +37,10 @@ and this project adheres to [Semantic Versioning][].
   data structure itself
 - New scEPS tutorial: end-to-end walkthrough of the four [scEPS](https://github.com/Genentech/sceps)
   command-line steps (per-neighborhood statistics, approximately independent neighborhood
-  blocks, cell-type aggregation, correlation with gene expression) on the dummy OneK1K
-  dataset, including what the prerequisite MAGMA and preprocessing steps must produce and
-  how to parallelize a real run
+  blocks, cell-type aggregation, correlation with gene expression) on OneK1K, including what
+  the prerequisite MAGMA and preprocessing steps must produce and how to parallelize a real
+  run. Fetches only the expression file `get_onek1k` lists, since scEPS uses no genotypes
+  and the genotype path needs PLINK and a genome-wide `vcf2zarr` pass
 - `tl.external.build_known_cis_eqtls_from_tensorqtl`: build a known-cis-eQTL annotation
   (variant x gene, binary) from a completed TensorQTL nominal cis-scan, for use as a
   fine-mapping prior
