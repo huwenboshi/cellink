@@ -205,4 +205,6 @@ docs/tutorials/dd_C_collection.zarr
 docs/tutorials/sceps_input.h5ad
 docs/tutorials/sceps_magma_placeholder.txt
 docs/tutorials/sceps_out/
+docs/tutorials/onek1k_data/
+docs/tutorials/onek1k_expression_only.yaml
 *.tar.gz
