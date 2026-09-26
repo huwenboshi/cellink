@@ -37,10 +37,15 @@ and this project adheres to [Semantic Versioning][].
   data structure itself
 - New scEPS tutorial: end-to-end walkthrough of the four [scEPS](https://github.com/Genentech/sceps)
   command-line steps (per-neighborhood statistics, approximately independent neighborhood
-  blocks, cell-type aggregation, correlation with gene expression) on OneK1K, including what
-  the prerequisite MAGMA and preprocessing steps must produce and how to parallelize a real
-  run. Fetches only the expression file `get_onek1k` lists, since scEPS uses no genotypes
-  and the genotype path needs PLINK and a genome-wide `vcf2zarr` pass
+  blocks, cell-type aggregation, correlation with gene expression) on OneK1K. Follows the
+  scEPS paper's design for a healthy cohort: the phenotype is a rheumatoid arthritis
+  polygenic risk score computed from the OneK1K genotypes with `--score`, and Step 1 is run
+  twice -- once with RA MAGMA genes and once with COPD genes as a mismatched-trait negative
+  control, which is what separates trait-specific signal from the PRS genotype-expression
+  confound. Also covers MAGMA via `tl.external.run_magma_pipeline`, genotype PCs as
+  covariates, and how to parallelize a real run
+- `resources.get_pgs_catalog_score_file` is now exported from `cellink.resources` and listed
+  in the API reference; it existed but could only be reached through the private module
 - `tl.external.build_known_cis_eqtls_from_tensorqtl`: build a known-cis-eQTL annotation
   (variant x gene, binary) from a completed TensorQTL nominal cis-scan, for use as a
   fine-mapping prior
