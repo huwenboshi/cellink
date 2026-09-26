@@ -41,8 +41,8 @@ and this project adheres to [Semantic Versioning][].
   arthritis. Follows the scEPS paper's design for a healthy cohort, where no case/control
   status exists to decompose: the phenotype is an RA polygenic risk score computed from the
   donors' own genotypes with PLINK `--score`, with genotype PCs as covariates. Also covers
-  gene-level statistics via `tl.external.run_magma_pipeline`, what a PRS phenotype can and
-  cannot support, and how to parallelize a real run
+  gene-level statistics via `tl.external.run_magma_pipeline` and how to parallelize a real
+  run
 - `resources.get_pgs_catalog_score_file` is now exported from `cellink.resources` and listed
   in the API reference; it existed but could only be reached through the private module
 - `tl.external.build_known_cis_eqtls_from_tensorqtl`: build a known-cis-eQTL annotation
