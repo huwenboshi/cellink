@@ -37,13 +37,12 @@ and this project adheres to [Semantic Versioning][].
   data structure itself
 - New scEPS tutorial: end-to-end walkthrough of the four [scEPS](https://github.com/Genentech/sceps)
   command-line steps (per-neighborhood statistics, approximately independent neighborhood
-  blocks, cell-type aggregation, correlation with gene expression) on OneK1K. Follows the
-  scEPS paper's design for a healthy cohort: the phenotype is a rheumatoid arthritis
-  polygenic risk score computed from the OneK1K genotypes with `--score`, and Step 1 is run
-  twice -- once with RA MAGMA genes and once with COPD genes as a mismatched-trait negative
-  control, which is what separates trait-specific signal from the PRS genotype-expression
-  confound. Also covers MAGMA via `tl.external.run_magma_pipeline`, genotype PCs as
-  covariates, and how to parallelize a real run
+  blocks, cell-type aggregation, correlation with gene expression) on OneK1K, for rheumatoid
+  arthritis. Follows the scEPS paper's design for a healthy cohort, where no case/control
+  status exists to decompose: the phenotype is an RA polygenic risk score computed from the
+  donors' own genotypes with PLINK `--score`, with genotype PCs as covariates. Also covers
+  gene-level statistics via `tl.external.run_magma_pipeline`, what a PRS phenotype can and
+  cannot support, and how to parallelize a real run
 - `resources.get_pgs_catalog_score_file` is now exported from `cellink.resources` and listed
   in the API reference; it existed but could only be reached through the private module
 - `tl.external.build_known_cis_eqtls_from_tensorqtl`: build a known-cis-eQTL annotation
