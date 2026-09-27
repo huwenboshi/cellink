@@ -203,4 +203,5 @@ docs/tutorials/dd_C.zarr
 docs/tutorials/dd_G_collection.zarr
 docs/tutorials/dd_C_collection.zarr
 docs/tutorials/sceps_out/
+docs/tutorials/work
 *.tar.gz
