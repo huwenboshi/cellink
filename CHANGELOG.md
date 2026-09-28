@@ -35,6 +35,16 @@ and this project adheres to [Semantic Versioning][].
   data (including loading genotypes via `read_sgkit_zarr`/`stream_pgen_to_zarr`), how donor
   syncing works, selecting subsets, aggregating, and saving/loading. No analysis, just the
   data structure itself
+- New scEPS tutorial: end-to-end walkthrough of the four [scEPS](https://github.com/Genentech/sceps)
+  command-line steps (per-neighborhood statistics, approximately independent neighborhood
+  blocks, cell-type aggregation, correlation with gene expression) on OneK1K, for rheumatoid
+  arthritis. Follows the scEPS paper's design for a healthy cohort, where no case/control
+  status exists to decompose: the phenotype is an RA polygenic risk score computed from the
+  donors' own genotypes with PLINK `--score`, with genotype PCs as covariates. Also covers
+  gene-level statistics via `tl.external.run_magma_pipeline` and how to parallelize a real
+  run
+- `resources.get_pgs_catalog_score_file` is now exported from `cellink.resources` and listed
+  in the API reference; it existed but could only be reached through the private module
 - `tl.external.build_known_cis_eqtls_from_tensorqtl`: build a known-cis-eQTL annotation
   (variant x gene, binary) from a completed TensorQTL nominal cis-scan, for use as a
   fine-mapping prior
@@ -90,7 +100,7 @@ and this project adheres to [Semantic Versioning][].
 - A stray unanchored `data` entry in `.gitignore` silently hid any new file added
   under `tests/data/` or `docs/tutorials/data/`; scoped it to the latter only
 - `io.to_plink` crashed (`TypeError: NDFrame.to_csv() got an unexpected keyword
-  argument 'line_terminator'`) with `pandas-plink` 2.2.9 on a modern pandas, which
+argument 'line_terminator'`) with `pandas-plink` 2.2.9 on a modern pandas, which
   renamed/removed that `to_csv` kwarg; bumped the minimum `pandas-plink` version to
   2.3.0, which uses the current `lineterminator` kwarg internally
 
